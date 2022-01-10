@@ -22,7 +22,7 @@ dependencies {
 	implementation 'mysql:mysql-connector-java'
 	implementation 'org.springframework.boot:spring-boot-starter-tomcat'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
-
+	implementation group: 'org.postgresql', name: 'postgresql', version: '42.1.4'
 }
 
 test {
