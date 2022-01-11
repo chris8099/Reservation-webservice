@@ -14,7 +14,7 @@ import java.util.List;
 
 @RestController
 @CrossOrigin
-@RequestMapping(value="/addacount", produces = MediaType.APPLICATION_JSON_VALUE)
+@RequestMapping(value = "/addacount", produces = MediaType.APPLICATION_JSON_VALUE)
 
 public class AddAccountController {
 
@@ -22,8 +22,13 @@ public class AddAccountController {
     private AccountRepository accountRepository;
 
     @PostMapping
-    public ResponseEntity<AccountEntity> createAccount(@RequestBody AccountEntity request){
+    public ResponseEntity<AccountEntity> createAccount(@RequestBody AccountEntity request) {
         List<AccountEntity> accountEntities = accountRepository.findAll();
+        System.out.println("======================");
+        accountEntities.forEach(a -> System.out.println(
+                a.getUser_Id()
+        ));
+        System.out.println("======================");
         boolean isIdDuplicated = accountEntities.stream()
                 .anyMatch(p -> p.getUser_Id().equals(request.getUser_Id()));
         if (isIdDuplicated) {
