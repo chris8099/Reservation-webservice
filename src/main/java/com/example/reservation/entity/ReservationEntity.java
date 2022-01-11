@@ -8,7 +8,7 @@ import java.sql.Timestamp;
 @Entity
 @Table(name="reservation_table")
 public class ReservationEntity implements Serializable {
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     @Column(name="id")
     Long id;

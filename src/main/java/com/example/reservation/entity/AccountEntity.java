@@ -6,7 +6,7 @@ import javax.persistence.*;
 @Entity
 @Table(name = "account_table")
 public class AccountEntity implements Serializable {
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     @Column(name = "id")
     Long id;
