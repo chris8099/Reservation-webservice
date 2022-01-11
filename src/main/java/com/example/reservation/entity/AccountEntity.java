@@ -11,7 +11,7 @@ import javax.persistence.Table;
 public class AccountEntity implements Serializable {
     @Id
     @Column(name = "id")
-    int id;
+    Integer id;
     @Column(name = "user_id")
     String user_Id;
     @Column(name = "user_pwd")
@@ -53,11 +53,11 @@ public class AccountEntity implements Serializable {
         this.user_Email = user_Email;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
