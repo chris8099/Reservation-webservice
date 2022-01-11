@@ -1,19 +1,17 @@
 package com.example.reservation.entity;
 
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.io.Serializable;
 import java.sql.Timestamp;
 
 @Entity
 @Table(name="reservation_table")
 public class ReservationEntity implements Serializable {
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Id
     @Column(name="id")
-    int id;
+    Long id;
     @Column(name="user_id")
     String user_Id;
     @Column(name="start_date")
@@ -55,11 +53,11 @@ public class ReservationEntity implements Serializable {
         this.content = content;
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 }

@@ -10,7 +10,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface DeleteAccountRepository extends JpaRepository<AccountEntity,Integer> {
+public interface DeleteAccountRepository extends JpaRepository<AccountEntity,Long> {
     @Query(value ="delete from account_table a where a.id:id",nativeQuery = true)
-    List<AccountEntity> deleteUser(@Param("id")Integer id);
+    List<AccountEntity> deleteUser(@Param("id")Long id);
 }

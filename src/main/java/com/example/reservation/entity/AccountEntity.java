@@ -9,7 +9,7 @@ public class AccountEntity implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Id
     @Column(name = "id")
-    Integer id;
+    Long id;
     @Column(name = "user_id")
     String user_Id;
     @Column(name = "user_pwd")
@@ -51,11 +51,11 @@ public class AccountEntity implements Serializable {
         this.user_Email = user_Email;
     }
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

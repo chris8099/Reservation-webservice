@@ -20,7 +20,7 @@ public class DeleteAccountController {
     @Autowired
     DeleteAccountRepository deleteAccountRepository;
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> DeleteUser(@PathVariable("id") Integer id)
+    public ResponseEntity<Void> DeleteUser(@PathVariable("id") Long id)
     {
         List<AccountEntity> accountEntities = accountRepository.findAll();
         boolean isRemoved = accountEntities.removeIf(p -> p.getId()==id);
