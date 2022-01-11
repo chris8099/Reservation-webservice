@@ -26,7 +26,15 @@ public class AddAccountController {
         List<AccountEntity> accountEntities = accountRepository.findAll();
         boolean isIdDuplicated = accountEntities.stream()
                 .anyMatch(p -> p.getUser_Id().equals(request.getUser_Id()));
-
+        if (isIdDuplicated) {
+            return ResponseEntity.status(HttpStatus.UNPROCESSABLE_ENTITY).build();
+        }
+        System.out.println("======================");
+        System.out.println(request.getUser_Id());
+        System.out.println(request.getUser_Pwd());
+        System.out.println(request.getUser_Name());
+        System.out.println(request.getUser_Email());
+        System.out.println("======================");
         AccountEntity accountEntity = new AccountEntity();
         accountEntity.setUser_Id(request.getUser_Id());
         accountEntity.setUser_Pwd(request.getUser_Pwd());
