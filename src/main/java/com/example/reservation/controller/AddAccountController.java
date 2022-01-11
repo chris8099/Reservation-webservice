@@ -34,7 +34,7 @@ public class AddAccountController {
         accountEntity.setUser_Pwd(request.getUser_Pwd());
         accountEntity.setUser_Name(request.getUser_Name());
         accountEntity.setUser_Email(request.getUser_Email());
-        accountRepository.saveAndFlush(accountEntity);
+        accountRepository.save(accountEntity);
         URI location = ServletUriComponentsBuilder
                 .fromCurrentRequest()
                 .path("/{user_id}")
