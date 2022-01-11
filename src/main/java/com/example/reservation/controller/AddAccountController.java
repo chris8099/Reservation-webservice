@@ -28,23 +28,19 @@ public class AddAccountController {
         accountEntities.forEach(a -> System.out.println(
                 a.getUser_Id()
         ));
-        System.out.println("======================");
         boolean isIdDuplicated = accountEntities.stream()
                 .anyMatch(p -> p.getUser_Id().equals(request.getUser_Id()));
         if (isIdDuplicated) {
             return ResponseEntity.status(HttpStatus.UNPROCESSABLE_ENTITY).build();
         }
-        System.out.println("======================");
-        System.out.println(request.getUser_Id());
-        System.out.println(request.getUser_Pwd());
-        System.out.println(request.getUser_Name());
-        System.out.println(request.getUser_Email());
-        System.out.println("======================");
         AccountEntity accountEntity = new AccountEntity();
         accountEntity.setUser_Id(request.getUser_Id());
         accountEntity.setUser_Pwd(request.getUser_Pwd());
         accountEntity.setUser_Name(request.getUser_Name());
         accountEntity.setUser_Email(request.getUser_Email());
+        System.out.println("======================");
+        System.out.println(accountEntity.toString());
+        System.out.println("======================");
         accountRepository.save(accountEntity);
         URI location = ServletUriComponentsBuilder
                 .fromCurrentRequest()

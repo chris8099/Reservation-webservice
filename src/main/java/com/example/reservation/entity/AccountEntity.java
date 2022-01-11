@@ -10,15 +10,15 @@ import javax.persistence.Table;
 @Table(name = "account_table")
 public class AccountEntity implements Serializable {
     @Id
-    @Column(name="id")
+    @Column(name = "id")
     int id;
-    @Column(name="user_id")
+    @Column(name = "user_id")
     String user_Id;
-    @Column(name="user_pwd")
+    @Column(name = "user_pwd")
     String user_Pwd;
-    @Column(name="user_name")
+    @Column(name = "user_name")
     String user_Name;
-    @Column(name="user_email")
+    @Column(name = "user_email")
     String user_Email;
 
     public String getUser_Id() {
@@ -59,5 +59,16 @@ public class AccountEntity implements Serializable {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    @Override
+    public String toString() {
+
+        return this.id + "," + this.user_Id + "," +
+
+                this.user_Pwd + "," +
+
+                this.user_Name + "," +
+                this.user_Email;
     }
 }
